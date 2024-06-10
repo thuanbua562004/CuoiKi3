@@ -1,0 +1,112 @@
+<!-- activity_statistics.xml -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/statistics_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thống kê"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:paddingBottom="16dp" />
+
+        <TextView
+            android:id="@+id/total_students_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total Students:"
+            android:textSize="18sp"
+            android:paddingTop="8dp" />
+
+        <TextView
+            android:id="@+id/total_students_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="18sp"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/average_score_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="tín chỉ hoàn thành"
+            android:textSize="18sp"
+            android:paddingTop="8dp" />
+        <TextView
+            android:id="@+id/total_students_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="18sp"
+            android:paddingBottom="8dp" />
+        <TextView
+            android:id="@+id/average_score_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Average Score:"
+            android:textSize="18sp"
+            android:paddingTop="8dp" />
+
+        <TextView
+            android:id="@+id/average_score_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0.0"
+            android:textSize="18sp"
+            android:paddingBottom="8dp" />
+        <TextView
+            android:id="@+id/average_score_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tín chỉ chưa hoàn thành"
+            android:textSize="18sp"
+            android:paddingTop="8dp" />
+        <TextView
+            android:id="@+id/total_students_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="18sp"
+            android:paddingBottom="8dp" />
+        <TextView
+            android:id="@+id/average_score_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="thời gian còn lại để ra trường"
+            android:textSize="18sp"
+            android:paddingTop="8dp" />
+        <TextView
+            android:id="@+id/total_students_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="18sp"
+            android:paddingBottom="8dp" />
+        <TextView
+            android:id="@+id/average_score_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GPA"
+            android:textSize="18sp"
+            android:paddingTop="8dp" />
+        <TextView
+            android:id="@+id/total_students_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="18sp"
+            android:paddingBottom="8dp" />
+
+        <!-- Add more statistical items as needed -->
+
+    </LinearLayout>
+</ScrollView>
