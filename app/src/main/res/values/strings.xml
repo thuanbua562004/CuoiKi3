@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CuoiKi</string>
+    <string name="underline_text"><u>Tại đây.</u></string>
 </resources>
