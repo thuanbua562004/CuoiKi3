@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/material_dynamic_neutral70"
+            android:gravity="center"
+            android:text="Đăng Nhập"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="343dp"
+            android:layout_height="66dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="488dp"
+            android:ems="10"
+            android:text="@null"
+            android:background="@drawable/border"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="343dp"
+            android:layout_height="66dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="355dp"
+            android:ems="10"
+            android:background="@drawable/border"
+
+            android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="293dp"
+            android:layout_marginBottom="428dp"
+            android:text="Password"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="283dp"
+            android:layout_marginBottom="560dp"
+            android:text="User Name"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="319dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="42dp"
+            android:textSize="20dp"
+            android:layout_marginBottom="239dp"
+            android:background="@color/colorPrimary"
+            android:text="Đăng Nhập" />
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="49dp"
+            android:textSize="15dp"
+            android:layout_marginBottom="151dp"
+            android:background="@android:color/transparent"
+            android:text="@string/underline_text"
+            android:textColor="@color/design_default_color_error" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="211dp"
+            android:layout_height="31dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="116dp"
+            android:layout_marginBottom="154dp"
+            android:text="Bạn chưa có tài khoản ? Đăng Kí" />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
