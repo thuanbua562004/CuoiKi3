@@ -1,157 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical"
-    >
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="Đăng Kí"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <View
-        android:layout_width="400dp"
-        android:layout_height="1dp"
-        android:background="#ACA1A1"
-        android:layout_gravity="center"
-        android:layout_marginTop="2dp"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="5dp">
+    <RelativeLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:background="@color/white"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="User Name:"
-            android:textSize="20dp"
-            android:layout_marginLeft="5dp"/>
-        <EditText
-            android:id="@+id/userName"
-            android:layout_width="300dp"
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:textSize="20dp"
-            android:background="#5676"
-            android:hint="Tên Đăng Nhập .."
-            android:layout_marginLeft="3dp"/>
-    </LinearLayout>
-    <TextView
-        android:id="@+id/userAlert"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textColor="#B71C1C"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="5dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Password:"
-            android:textSize="20dp"
-            android:layout_marginLeft="5dp" />
+            android:layout_marginTop="10dp"
+            android:background="@color/material_dynamic_neutral70"
+            android:gravity="center"
+            android:text="Đăng Kí Tài Khoản"
+            android:textSize="25dp" />
+
         <EditText
-            android:id="@+id/userPassword"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:textSize="20dp"
-            android:background="#5676"
-            android:hint="Mật Khẩu.."
-            android:layout_marginLeft="13dp"
+            android:id="@+id/username"
+            android:layout_width="343dp"
+            android:layout_height="66dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="488dp"
+            android:background="@drawable/border"
+            android:ems="10"
+            android:inputType="text"
+            android:text="@null" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="343dp"
+            android:layout_height="66dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="350dp"
+            android:background="@drawable/border"
+            android:ems="10"
+
             android:inputType="textPassword" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="5dp"/>
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Giới Tính"
-            android:textSize="20dp"
-            android:layout_marginRight="35dp"
-            android:layout_marginLeft="5dp"/>
-        <RadioButton
-            android:id="@+id/Male"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nam"
-            android:gravity="center"
-            android:textSize="20dp"/>
-        <RadioButton
-            android:id="@+id/Female"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nữ"
-            android:gravity="center"
-            android:textSize="20dp"/>
-    </RadioGroup>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
         <TextView
-            android:layout_width="96dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="Quốc Gia"
-            android:textSize="20dp" />
-        <Spinner
-            android:id="@+id/SpCountry"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-
-            android:layout_marginLeft="38dp"
-            android:textSize="30dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
-        <TextView
+            android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Comment"
-            android:textSize="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="289dp"
+            android:layout_marginBottom="419dp"
+            android:text="Password"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="18dp" />
 
-            android:layout_marginLeft="5dp"/>
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="283dp"
+            android:layout_marginBottom="560dp"
+            android:text="User Name"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/txtrepassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="269dp"
+            android:layout_marginBottom="262dp"
+            android:text="RePassword"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="18dp" />
+
         <EditText
-            android:id="@+id/usercomment"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:hint="Enter your comments.."
-            android:layout_marginLeft="15dp"
-            android:background="#5676"/>
+            android:id="@+id/repassword"
+            android:layout_width="343dp"
+            android:layout_height="66dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="27dp"
+            android:layout_marginBottom="191dp"
+            android:background="@drawable/border"
+            android:ems="10"
 
-    </LinearLayout>
-    <Button
-        android:id="@+id/btnSubmit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hoàn Thành "
-        android:textColor="#F5FBF6"
-        android:background="#B71C1C"
-        android:layout_marginTop="10dp"/>
+            android:inputType="textPassword" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/login"
+            android:layout_width="319dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="47dp"
+            android:layout_marginBottom="59dp"
+            android:background="@color/colorPrimary"
+            android:text="Xác Nhận"
+            android:textSize="20dp" />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
