@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:background="@color/white"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
@@ -19,95 +14,84 @@
             android:layout_marginTop="10dp"
             android:background="@color/material_dynamic_neutral70"
             android:gravity="center"
-            android:text="Đăng Kí Tài Khoản"
-            android:textSize="25dp" />
-
-        <EditText
-            android:id="@+id/username"
-            android:layout_width="343dp"
-            android:layout_height="66dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="488dp"
-            android:background="@drawable/border"
-            android:ems="10"
-            android:inputType="text"
-            android:text="@null" />
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="343dp"
-            android:layout_height="66dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="28dp"
-            android:layout_marginBottom="350dp"
-            android:background="@drawable/border"
-            android:ems="10"
-
-            android:inputType="textPassword" />
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="289dp"
-            android:layout_marginBottom="419dp"
-            android:text="Password"
-            android:textColor="@android:color/holo_red_dark"
-            android:textSize="18dp" />
-
+            android:text="Đăng Kí"
+            android:textSize="25sp" />
         <TextView
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="283dp"
-            android:layout_marginBottom="560dp"
+            android:layout_marginTop="50sp"
+            android:layout_marginStart="25dp"
             android:text="User Name"
             android:textColor="@android:color/holo_red_dark"
             android:textSize="18dp" />
-
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="343sp"
+            android:layout_height="66sp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:ems="10"
+            android:hint="Enter your username"
+            android:inputType="textPassword"
+            android:background="@drawable/border"/>
         <TextView
-            android:id="@+id/txtrepassword"
+            android:id="@+id/txtpass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="269dp"
-            android:layout_marginBottom="262dp"
-            android:text="RePassword"
+            android:layout_marginTop="50sp"
+            android:layout_marginLeft="25dp"
+            android:text="Password"
             android:textColor="@android:color/holo_red_dark"
             android:textSize="18dp" />
-
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="343dp"
+            android:layout_height="66dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_horizontal"
+            android:ems="10"
+            android:background="@drawable/border"
+            android:hint="Enter your password" />
+        <TextView
+            android:id="@+id/txtrepass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="50sp"
+            android:layout_marginLeft="25dp"
+            android:text="Password"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="18dp" />
         <EditText
             android:id="@+id/repassword"
             android:layout_width="343dp"
             android:layout_height="66dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="27dp"
-            android:layout_marginBottom="191dp"
-            android:background="@drawable/border"
+            android:layout_gravity="center_horizontal"
             android:ems="10"
-
-            android:inputType="textPassword" />
-
+            android:background="@drawable/border"
+            android:hint="Enter your password" />
         <Button
             android:id="@+id/login"
             android:layout_width="319dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="47dp"
-            android:layout_marginBottom="59dp"
+            android:textSize="20dp"
             android:background="@color/colorPrimary"
-            android:text="Xác Nhận"
-            android:textSize="20dp" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="55dp"
+            android:text="Xác Nhận" />
 
-    </RelativeLayout>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
