@@ -20,6 +20,44 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="268dp"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nameApp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/material_dynamic_neutral80"
+                    android:gravity="center"
+                    android:text="Chi Tiết Sinh Viên"
+                    android:textColor="@color/black"
+                    android:textSize="25dp" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="205dp"
+                    android:layout_height="142dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    android:src="@drawable/people" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:text="MSSV:22548125"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="275dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
@@ -73,41 +111,6 @@
                     android:gravity="center"
                     android:text="Nganh Hoc" />
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/nameApp"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/material_dynamic_neutral80"
-                android:gravity="center"
-                android:text="Chi Tiết Sinh Viên"
-                android:textColor="@color/black"
-                android:textSize="25dp" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="254dp"
-                android:layout_marginEnd="127dp"
-                android:text="MSSV:22548125"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="205dp"
-                android:layout_height="142dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="78dp"
-                android:layout_marginEnd="99dp"
-                android:layout_marginBottom="453dp"
-                android:src="@drawable/people" />
 
         </RelativeLayout>
 
