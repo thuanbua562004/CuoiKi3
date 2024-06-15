@@ -12,21 +12,15 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/material_dynamic_neutral70"
-                android:gravity="center"
-                android:text="Đăng Nhập"
-                android:textSize="25sp" />
-        </LinearLayout>
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/material_dynamic_neutral70"
+            android:gravity="center"
+            android:text="Đăng Nhập"
+            android:textSize="25sp" />
 
         <EditText
             android:id="@+id/username"
