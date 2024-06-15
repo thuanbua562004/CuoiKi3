@@ -68,7 +68,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginTop="50sp"
             android:layout_marginLeft="25dp"
-            android:text="Password"
+            android:text="Comfirm"
             android:textColor="@android:color/holo_red_dark"
             android:textSize="18dp" />
         <EditText
@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:textSize="20dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/white"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="55dp"
             android:text="Xác Nhận" />
