@@ -48,10 +48,10 @@
                 android:id="@+id/nameApp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@color/material_dynamic_neutral80"
+                android:background="@color/primarykey_color_btn"
                 android:gravity="center"
                 android:text="Chỉnh Sửa Sinh Viên"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/primarykey_color_text"
                 android:textSize="25dp" />
 
 
@@ -207,9 +207,10 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="20dp"
+                        android:backgroundTint="@color/primarykey_color_btn"
                         android:gravity="center"
                         android:text="Cập Nhật"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/primarykey_color_text" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -220,7 +221,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="40"
-            android:background="@color/material_dynamic_neutral90">
+            android:background="@color/primarykey_color_btn">
 
             <ImageButton
                 android:id="@+id/home"

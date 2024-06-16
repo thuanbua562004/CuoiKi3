@@ -28,10 +28,10 @@
                     android:id="@+id/nameApp"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:background="@color/material_dynamic_neutral80"
+                    android:background="@color/primarykey_color_btn"
                     android:gravity="center"
                     android:text="Lich Hoc Theo Tuan"
-                    android:textColor="@color/black"
+                    android:textColor="@color/primarykey_color_text"
                     android:textSize="25dp" />
 
 
@@ -103,7 +103,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/textView19"
+                                android:id="@+id/ds"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -111,7 +111,7 @@
                                 android:textSize="25dp" />
 
                             <TextView
-                                android:id="@+id/textView20"
+                                android:id="@+id/fsa"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -119,7 +119,7 @@
                                 android:textSize="20dp" />
 
                             <TextView
-                                android:id="@+id/textView21"
+                                android:id="@+id/saf"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -134,7 +134,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/textView19"
+                                android:id="@+id/gsfa"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -142,7 +142,7 @@
                                 android:textSize="25dp" />
 
                             <TextView
-                                android:id="@+id/textView20"
+                                android:id="@+id/gsdaf"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -150,7 +150,7 @@
                                 android:textSize="20dp" />
 
                             <TextView
-                                android:id="@+id/textView21"
+                                android:id="@+id/agsaga"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -166,7 +166,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/textView19"
+                                android:id="@+id/gasf"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -174,7 +174,7 @@
                                 android:textSize="25dp" />
 
                             <TextView
-                                android:id="@+id/textView20"
+                                android:id="@+id/asfas"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -182,7 +182,7 @@
                                 android:textSize="20dp" />
 
                             <TextView
-                                android:id="@+id/textView21"
+                                android:id="@+id/gsaas"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -214,7 +214,7 @@
                                 android:textSize="20dp" />
 
                             <TextView
-                                android:id="@+id/textView21"
+                                android:id="@+id/hsga"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -230,7 +230,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/textView19"
+                                android:id="@+id/wrdd"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -246,7 +246,7 @@
                                 android:textSize="20dp" />
 
                             <TextView
-                                android:id="@+id/textView21"
+                                android:id="@+id/wrw"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -261,7 +261,7 @@
                             android:layout_weight="1"
                             android:orientation="vertical">
                             <TextView
-                                android:id="@+id/textView19"
+                                android:id="@+id/gsf"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -269,7 +269,7 @@
                                 android:textSize="25dp" />
 
                             <TextView
-                                android:id="@+id/textView20"
+                                android:id="@+id/safas"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -277,7 +277,7 @@
                                 android:textSize="20dp" />
 
                             <TextView
-                                android:id="@+id/textView21"
+                                android:id="@+id/asf"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -293,7 +293,7 @@
                             android:layout_weight="1"
                             android:orientation="vertical">
                             <TextView
-                                android:id="@+id/textView19"
+                                android:id="@+id/asfa"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -301,7 +301,7 @@
                                 android:textSize="25dp" />
 
                             <TextView
-                                android:id="@+id/textView20"
+                                android:id="@+id/gsg"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -309,7 +309,7 @@
                                 android:textSize="20dp" />
 
                             <TextView
-                                android:id="@+id/textView21"
+                                android:id="@+id/zv"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -328,7 +328,7 @@
         </RelativeLayout>
 
         <LinearLayout
-            android:background="@color/material_dynamic_neutral90"
+            android:background="@color/primarykey_color_btn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="25">

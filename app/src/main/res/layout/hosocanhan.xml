@@ -28,10 +28,10 @@
                     android:id="@+id/nameApp"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:background="@color/material_dynamic_neutral80"
+                    android:background="@color/primarykey_color_btn"
                     android:gravity="center"
                     android:text="Hồ Sơ Cá Nhân"
-                    android:textColor="@color/black"
+                    android:textColor="@color/primarykey_color_text"
                     android:textSize="25dp" />
 
 
@@ -95,7 +95,7 @@
         </RelativeLayout>
 
         <LinearLayout
-            android:background="@color/material_dynamic_neutral90"
+            android:background="@color/primarykey_color_btn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="25">
