@@ -20,11 +20,17 @@
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="189dp"
+                android:layout_height="114dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="99dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="123dp"
                 android:layout_weight="4"
-                android:layout_marginTop="70dp"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:background="@null"
+                android:src="@drawable/logovaa" />
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -33,9 +39,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="237dp"
-                android:layout_marginTop="172dp"
-                android:layout_marginEnd="134dp"
+                android:layout_marginStart="232dp"
+                android:layout_marginTop="166dp"
+                android:layout_marginEnd="139dp"
                 app:srcCompat="@drawable/chageavatar" />
 
             <TextView
@@ -45,17 +51,17 @@
                 android:background="@color/material_dynamic_neutral80"
                 android:gravity="center"
                 android:text="Chỉnh Sửa Sinh Viên"
-                android:textColor="@color/black"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="25dp" />
 
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="275dp"
+                android:layout_width="399dp"
+                android:layout_height="392dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="0dp"
-                android:layout_marginBottom="130dp"
+                android:layout_marginBottom="62dp"
                 android:layout_weight="20"
                 android:orientation="vertical">
 
@@ -72,16 +78,16 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:gravity="center"
-                        android:text="Ten:"
+                        android:text="Tên:"
                         android:textSize="18dp" />
 
                     <EditText
                         android:id="@+id/editTextText"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="48dp"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:hint="Nhap Ten"
+                        android:hint="Nhập Tên"
                         android:inputType="text" />
                 </LinearLayout>
 
@@ -93,7 +99,7 @@
 
                     <TextView
                         android:id="@+id/textView12"
-                        android:layout_width="1"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:gravity="center"
@@ -103,10 +109,10 @@
                     <EditText
                         android:id="@+id/editTextText2"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="48dp"
                         android:layout_weight="3"
                         android:ems="10"
-                        android:hint="Nhap Mail"
+                        android:hint="Nhập Mail"
                         android:inputType="text" />
 
                 </LinearLayout>
@@ -123,16 +129,16 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:gravity="center"
-                        android:text="Que Quan:"
+                        android:text="Quê Quán:"
                         android:textSize="18dp" />
 
                     <EditText
                         android:id="@+id/editTextText3"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="48dp"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:hint="Nhap Que Quan"
+                        android:hint="Nhập Quê Quán"
                         android:inputType="text" />
 
                 </LinearLayout>
@@ -149,16 +155,16 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:gravity="center"
-                        android:text="Nam Sinh:"
+                        android:text="Năm Sinh:"
                         android:textSize="18dp" />
 
                     <EditText
                         android:id="@+id/editTextText4"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="48dp"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:hint="Nhap Nam Sinh"
+                        android:hint="Nhập Năm Sinh"
                         android:inputType="text" />
 
                 </LinearLayout>
@@ -175,33 +181,38 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:gravity="center"
-                        android:text="Nganh hoc:"
+                        android:text="Ngành Học:"
                         android:textSize="18dp" />
 
                     <EditText
                         android:id="@+id/editTextText5"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="48dp"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:hint="Nhap Nghanh"
+                        android:hint="Ngành Ngành"
                         android:inputType="text" />
 
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/button2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:text="Cập Nhật"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
             </LinearLayout>
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="152dp"
-                android:layout_marginTop="567dp"
-                android:text="Cap Nhat"
-                android:textColor="@color/black" />
 
         </RelativeLayout>
 
@@ -238,7 +249,7 @@
             <ImageButton
                 android:id="@+id/menu"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="58dp"
                 android:layout_weight="5"
                 android:background="@null"
                 app:srcCompat="@drawable/menu" />
