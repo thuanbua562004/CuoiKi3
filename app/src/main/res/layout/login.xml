@@ -21,10 +21,11 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/material_dynamic_neutral70"
+                android:layout_marginTop="5dp"
+                android:background="@color/primarykey_color_btn"
                 android:gravity="center"
                 android:text="Đăng Nhập"
+                android:textColor="@color/primarykey_color_text"
                 android:textSize="25sp" />
         </LinearLayout>
 
@@ -88,7 +89,7 @@
             android:layout_marginEnd="42dp"
             android:textSize="20dp"
             android:layout_marginBottom="239dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/primarykey_color_btn"
             android:text="Đăng Nhập" />
 
         <Button

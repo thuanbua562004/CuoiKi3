@@ -12,8 +12,9 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
-            android:background="@color/material_dynamic_neutral70"
+            android:background="@color/primarykey_color_btn"
             android:gravity="center"
+            android:textColor="@color/primarykey_color_text"
             android:text="Đăng Kí"
             android:textSize="25sp" />
         <TextView
@@ -87,7 +88,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:textSize="20dp"
-            android:background="@color/white"
+            android:textColor="@color/primarykey_color_text"
+            android:backgroundTint="@color/primarykey_color_btn"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="55dp"
             android:text="Xác Nhận" />
