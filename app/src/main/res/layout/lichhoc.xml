@@ -35,42 +35,41 @@
                     android:textSize="25dp" />
 
 
-
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginTop="15dp"
-                    android:text="Ngày: 16/6/2004"
+                    android:text="Ngày: 24/6/2024"
                     android:textColor="@color/black"
-                    android:textSize="25dp"
-                     />
+                    android:textSize="25dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/button"
+
+                    <ImageButton
+                        android:id="@+id/imageButton2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tro ve"
+                        app:srcCompat="@drawable/back" />
 
-                        android:layout_marginLeft="30dp"/>
-
-                    <Button
-                        android:id="@+id/button3"
+                    <ImageButton
+                        android:id="@+id/imageButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Hien tai" />
+                        app:srcCompat="@drawable/now" />
 
-                    <Button
-                        android:id="@+id/button4"
+                    <ImageButton
+                        android:id="@+id/imageButton3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tiep" />
+                        app:srcCompat="@drawable/next" />
+
+
                 </LinearLayout>
 
 
@@ -107,8 +106,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Thu 2:"
-                                android:textSize="25dp" />
+                                android:text="Thứ 2(24/06/2024)"
+                                android:textSize="25dp"
+                                android:textColor="#00bfff"/>
 
                             <TextView
                                 android:id="@+id/textView20"
@@ -138,8 +138,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Thu 3:"
-                                android:textSize="25dp" />
+                                android:text="Thứ 3(25/06/2024)"
+                                android:textSize="25dp"
+                                android:textColor="#00bfff"/>
 
                             <TextView
                                 android:id="@+id/textView20"
@@ -170,8 +171,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Thu 4:"
-                                android:textSize="25dp" />
+                                android:text="Thứ 4(26/06/2024)"
+                                android:textSize="25dp"
+                                android:textColor="#00bfff"/>
 
                             <TextView
                                 android:id="@+id/textView20"
@@ -202,8 +204,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Thu 5:"
-                                android:textSize="25dp" />
+                                android:text="Thứ 5(27/06/2024)"
+                                android:textSize="25dp"
+                                android:textColor="#00bfff"/>
 
                             <TextView
                                 android:id="@+id/monhoc5"
@@ -234,8 +237,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Thu 6:"
-                                android:textSize="25dp" />
+                                android:text="Thứ 6(28/06/2024)"
+                                android:textSize="25dp"
+                                android:textColor="#00bfff"/>
 
                             <TextView
                                 android:id="@+id/textView20"
@@ -265,8 +269,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Thu 7:"
-                                android:textSize="25dp" />
+                                android:text="Thứ 7(29/06/2024)"
+                                android:textSize="25dp"
+                                android:textColor="#00bfff"/>
 
                             <TextView
                                 android:id="@+id/textView20"
@@ -297,8 +302,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Chu nhat:"
-                                android:textSize="25dp" />
+                                android:text="Chủ Nhật(30/06/2024)"
+                                android:textSize="25dp"
+                                android:textColor="#00bfff"/>
 
                             <TextView
                                 android:id="@+id/textView20"
