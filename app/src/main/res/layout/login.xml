@@ -37,9 +37,8 @@
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="30sp"
             android:layout_marginBottom="488sp"
-            android:ems="10"
             android:hint="Enter your username"
-            android:inputType="textPassword"
+            android:inputType="text"
             android:background="@drawable/border"/>
 
         <EditText
@@ -51,6 +50,7 @@
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="355dp"
             android:ems="10"
+            android:inputType="textPassword"
             android:background="@drawable/border"
             android:hint="Enter your password" />
 
@@ -81,7 +81,7 @@
             android:textSize="18dp" />
 
         <Button
-            android:id="@+id/login"
+            android:id="@+id/btnlogin"
             android:layout_width="319dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -89,11 +89,12 @@
             android:layout_marginEnd="42dp"
             android:textSize="20dp"
             android:layout_marginBottom="239dp"
-            android:background="@color/primarykey_color_btn"
+            android:textColor="@color/primarykey_color_text"
+            android:backgroundTint="@color/primarykey_color_btn"
             android:text="Đăng Nhập" />
 
         <Button
-            android:id="@+id/register"
+            android:id="@+id/btnRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"

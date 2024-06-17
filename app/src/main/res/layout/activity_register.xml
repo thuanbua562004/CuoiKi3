@@ -36,9 +36,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginTop="5dp"
             android:layout_gravity="center_horizontal"
-            android:ems="10"
             android:hint="Enter your username"
-            android:inputType="textPassword"
             android:background="@drawable/border"/>
         <TextView
             android:id="@+id/txtpass"
@@ -52,13 +50,13 @@
             android:textColor="@android:color/holo_red_dark"
             android:textSize="18dp" />
         <EditText
+            android:inputType="textPassword"
             android:id="@+id/password"
             android:layout_width="343dp"
             android:layout_height="66dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_gravity="center_horizontal"
-            android:ems="10"
             android:background="@drawable/border"
             android:hint="Enter your password" />
         <TextView
@@ -73,17 +71,17 @@
             android:textColor="@android:color/holo_red_dark"
             android:textSize="18dp" />
         <EditText
+            android:inputType="textPassword"
             android:id="@+id/repassword"
             android:layout_width="343dp"
             android:layout_height="66dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_gravity="center_horizontal"
-            android:ems="10"
             android:background="@drawable/border"
             android:hint="Enter your password" />
         <Button
-            android:id="@+id/login"
+            android:id="@+id/btnConfirm"
             android:layout_width="319dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
