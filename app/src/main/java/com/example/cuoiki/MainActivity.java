@@ -26,7 +26,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     EditText txtUsername, txtPassword;
     Button btnLogin,btnRegister;
-    String url = "http://192.168.1.21/QLSV/login.php";
+    String url = "http://10.50.1.74/QLSV/login.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
