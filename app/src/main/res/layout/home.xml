@@ -127,7 +127,7 @@
 
                     <ImageButton
                         android:contentDescription="Thong Bao"
-                        android:id="@+id/imageButton5"
+                        android:id="@+id/imgthongbao"
                         android:layout_width="match_parent"
                         android:layout_height="78dp"
                         android:layout_weight="1"

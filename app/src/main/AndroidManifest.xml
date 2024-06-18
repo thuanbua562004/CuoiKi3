@@ -19,7 +19,7 @@
             android:name=".register"
             android:exported="false" />
         <activity
-            android:name=".home"
+            android:name=".NotificationActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
