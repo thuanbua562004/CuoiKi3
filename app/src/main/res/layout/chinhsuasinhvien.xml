@@ -216,41 +216,40 @@
             </LinearLayout>
 
         </RelativeLayout>
-
         <LinearLayout
+            android:background="@color/primarykey_color_btn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="40"
-            android:background="@color/primarykey_color_btn">
-
+            android:layout_weight="50">
             <ImageButton
+                android:contentDescription="Home"
                 android:id="@+id/home"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="6"
                 android:background="@null"
                 app:srcCompat="@drawable/home" />
-
             <ImageButton
+                android:contentDescription="News"
                 android:id="@+id/news"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="5"
                 android:background="@null"
+                android:layout_weight="5"
                 app:srcCompat="@drawable/news" />
-
             <ImageButton
+                android:contentDescription="Users"
                 android:id="@+id/user"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
                 android:background="@null"
                 app:srcCompat="@drawable/user" />
-
             <ImageButton
+                android:contentDescription="Menu"
                 android:id="@+id/menu"
                 android:layout_width="wrap_content"
-                android:layout_height="58dp"
+                android:layout_height="match_parent"
                 android:layout_weight="5"
                 android:background="@null"
                 app:srcCompat="@drawable/menu" />

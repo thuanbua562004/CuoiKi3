@@ -18,75 +18,70 @@
             android:layout_height="match_parent"
             android:layout_weight="2">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/nameApp"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_weight="2"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/nameApp"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@color/primarykey_color_btn"
-                    android:gravity="center"
-                    android:text="Hồ Sơ Cá Nhân"
-                    android:textColor="@color/primarykey_color_text"
-                    android:textSize="25dp" />
-
-
-
-            </LinearLayout>
+                android:layout_height="50dp"
+                android:background="@color/primarykey_color_btn"
+                android:gravity="center"
+                android:text="Thong tin ca nhan"
+                android:textColor="@color/primarykey_color_text"
+                android:textSize="25dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="302dp"
-                android:layout_alignParentStart="true"
+                android:layout_height="478dp"
+                android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginBottom="274dp"
-                android:layout_weight="4"
+                android:layout_marginTop="99dp"
+                android:layout_marginBottom="100dp"
+                android:layout_weight="5"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView22"
+                    android:layout_weight="1"
+                    android:id="@+id/textView31"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:textSize="25dp"
                     android:gravity="center"
-                    android:layout_marginStart="20dp"
-                    android:text="Gpa"
-                    android:textSize="18dp" />
+                    android:text="Chi Tiet Sinh Vien" />
 
                 <TextView
-                    android:id="@+id/textView23"
+                    android:layout_weight="1"
+                    android:id="@+id/textView30"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:textSize="25dp"
                     android:gravity="center"
-                    android:layout_marginStart="10dp"
-                    android:text="Tín chỉ đạt được :"
-                    android:textSize="18dp" />
+                    android:text="Cap nhat sinh vien" />
 
                 <TextView
-                    android:id="@+id/textView24"
+                    android:layout_weight="1"
+                    android:id="@+id/textView29"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:textSize="25dp"
                     android:gravity="center"
-                    android:layout_marginStart="10dp"
-                    android:text="Tín chỉ còn :"
-                    android:textSize="18dp" />
+                    android:text="TextView" />
 
                 <TextView
-                    android:id="@+id/textView25"
+                    android:layout_weight="1"
+                    android:id="@+id/textView28"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:textSize="25dp"
                     android:gravity="center"
-                    android:layout_marginStart="10dp"
-                    android:text="Tín chỉ học kì 3:"
-                    android:textSize="18dp" />
+                    android:text="TextView" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/textView27"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"
+                    android:gravity="center"
+                    android:text="Dang xuat" />
             </LinearLayout>
 
         </RelativeLayout>

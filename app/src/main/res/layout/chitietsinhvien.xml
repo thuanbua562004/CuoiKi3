@@ -120,6 +120,7 @@
             android:layout_height="match_parent"
             android:layout_weight="25">
             <ImageButton
+                android:contentDescription="Home"
                 android:id="@+id/home"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -127,6 +128,7 @@
                 android:background="@null"
                 app:srcCompat="@drawable/home" />
             <ImageButton
+                android:contentDescription="News"
                 android:id="@+id/news"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -134,6 +136,7 @@
                 android:layout_weight="5"
                 app:srcCompat="@drawable/news" />
             <ImageButton
+                android:contentDescription="Users"
                 android:id="@+id/user"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -141,6 +144,7 @@
                 android:background="@null"
                 app:srcCompat="@drawable/user" />
             <ImageButton
+                android:contentDescription="Menu"
                 android:id="@+id/menu"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
