@@ -29,7 +29,7 @@ import java.util.Map;
 public class register extends AppCompatActivity {
     Button btnConfirm ;
     TextView txtUsername , txtPassword ,txtRepassword;
-    String url ="http://192.168.1.58/QLSV/register.php";
+    String url ="http://192.168.1.19/QLSV/register.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +68,9 @@ public class register extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
+                Log.i("TAG1", volleyError.toString());
                 Toast.makeText(register.this,volleyError.toString(),Toast.LENGTH_LONG).show();
+
             }
         }){
             @Nullable
