@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/nameNoti"
+                android:layout_width="325dp"
+                android:layout_height="69dp"
+                android:gravity="center"
+                android:text="Name" />
+
+            <TextView
+                android:id="@+id/dateNoti"
+                android:layout_width="178dp"
+                android:layout_height="68dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Date" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

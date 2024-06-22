@@ -19,6 +19,9 @@
             android:name=".user"
             android:exported="false" />
         <activity
+            android:name=".NotificationActivity"
+            android:exported="false" />
+        <activity
             android:name=".register"
             android:exported="false" />
         <activity

@@ -1,6 +1,8 @@
 package com.example.cuoiki;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -34,7 +36,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     private EditText txtUsername, txtPassword;
     private Button btnLogin, btnRegister;
-    private static final String url = "http://192.168.1.19/QLSV/login.php";
+    private static final String url = "http://192.168.1.20/QLSV/login.php";
     private ArrayList<SinhVien> arrayList;
 
     @Override
@@ -75,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            public Context context;
             @Override
             public void onResponse(String response) {
                 try {
