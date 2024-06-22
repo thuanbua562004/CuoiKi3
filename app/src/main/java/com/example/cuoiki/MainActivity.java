@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -38,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
     private Button btnLogin, btnRegister;
     private static final String url = "http://192.168.1.20/QLSV/login.php";
     private ArrayList<SinhVien> arrayList;
+    public static final String MyPREFERENCES = "mystore" ;
+    public static final String mssvkey = "mssvkey";
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, register.class));
             }
         });
-
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     SinhVien sv = arrayList.get(0);
                     Log.i("TAG1", sv.getMssv().toString());
+                    session(sv.getMssv().toString());
                     startActivity(new Intent(MainActivity.this , home.class));
                 } catch (JSONException e) {
                     throw new RuntimeException(e);
@@ -118,6 +123,12 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         requestQueue.add(stringRequest);
+    }
+    public void session (String mssv ){
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        editor = sharedPreferences.edit();
+        editor.putString(mssvkey, mssv);
+        editor.commit();
     }
 
 
