@@ -31,7 +31,7 @@ public class NotificationActivity extends AppCompatActivity {
     private ArrayList<notication> arrayListNoti;
     private ListView listView;
     private notication_apdapter adapter;
-    private String url = "http://192.168.1.20/QLSV/getnotification.php";
+    private String url = "http://192.168.1.25/QLSV/getnotification.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

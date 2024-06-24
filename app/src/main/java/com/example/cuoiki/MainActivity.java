@@ -37,7 +37,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     private EditText txtUsername, txtPassword;
     private Button btnLogin, btnRegister;
-    private static final String url = "http://192.168.1.20/QLSV/login.php";
+    private static final String url = "http://192.168.40.107/QLSV/login.php";
     private ArrayList<SinhVien> arrayList;
     public static final String MyPREFERENCES = "mystore" ;
     public static final String mssvkey = "mssvkey";
