@@ -9,20 +9,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -37,8 +31,8 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     private EditText txtUsername, txtPassword;
     private Button btnLogin, btnRegister;
-    private static final String url = "http://192.168.1.24/QLSV/login.php";
-    private ArrayList<SinhVien> arrayList;
+    private static final String url = "http://192.168.1.19/QLSV/login.php";
+    public ArrayList<SinhVien> arrayList;
     public static final String MyPREFERENCES = "mystore" ;
     public static final String mssvkey = "mssvkey";
     SharedPreferences sharedPreferences;
@@ -64,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, register.class));
+                startActivity(new Intent(MainActivity.this, RegisterActivity.class));
             }
         });
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -102,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                     SinhVien sv = arrayList.get(0);
                     Log.i("TAG1", sv.getMssv().toString());
                     session(sv.getMssv().toString());
-                    startActivity(new Intent(MainActivity.this , home.class));
+                    startActivity(new Intent(MainActivity.this , HomeActivity.class));
                 } catch (JSONException e) {
                     throw new RuntimeException(e);
                 }

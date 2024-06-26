@@ -16,16 +16,22 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".user"
+            android:name=".UserUpdate"
+            android:exported="false" />
+        <activity
+            android:name=".MenuUser"
+            android:exported="false" />
+        <activity
+            android:name=".UserActivity"
             android:exported="false" />
         <activity
             android:name=".NotificationActivity"
             android:exported="false" />
         <activity
-            android:name=".register"
+            android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".home"
+            android:name=".HomeActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

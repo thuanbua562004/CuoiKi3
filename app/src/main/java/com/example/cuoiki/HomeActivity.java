@@ -7,8 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class home extends AppCompatActivity {
-    ImageButton imgthongbao  ,user;
+public class HomeActivity extends AppCompatActivity {
+    ImageButton imgthongbao  ,news,user,homme ,menu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,14 +20,20 @@ public class home extends AppCompatActivity {
         imgthongbao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(home.this, NotificationActivity.class);
+                Intent intent = new Intent(HomeActivity.this, NotificationActivity.class);
                 startActivity(intent);
             }
         });
         user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(home.this , user.class));
+                startActivity(new Intent(HomeActivity.this , UserActivity.class));
+            }
+        });
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this , MenuUser.class));
             }
         });
 
@@ -35,6 +41,9 @@ public class home extends AppCompatActivity {
     public void anhxa(){
         imgthongbao = findViewById(R.id.imgthongbao);
         user = findViewById(R.id.user);
+        homme = findViewById(R.id.home);
+        news  =findViewById(R.id.news);
+        menu = findViewById(R.id.menu);
 
     }
 }

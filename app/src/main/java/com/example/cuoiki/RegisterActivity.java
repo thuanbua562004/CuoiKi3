@@ -8,12 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -26,10 +22,10 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
-public class register extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
     Button btnConfirm ;
     TextView txtUsername , txtPassword ,txtRepassword;
-    String url ="http://192.168.40.107/QLSV/register.php";
+    String url ="http://192.168.1.29/QLSV/register.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,12 +35,12 @@ public class register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(txtUsername.getText().toString().equals("") || txtPassword.getText().toString().equals("") || txtRepassword.getText().toString().equals("")){
-                    Toast.makeText(register.this,"Vui Long Nhap Day Du",Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this,"Vui Long Nhap Day Du",Toast.LENGTH_LONG).show();
                 }else{
                     if(txtPassword.getText().toString().equals(txtRepassword.getText().toString())){
                         register(url);
                     }else{
-                        Toast.makeText(register.this,"Mat Khau Khong Trung khop",Toast.LENGTH_LONG).show();
+                        Toast.makeText(RegisterActivity.this,"Mat Khau Khong Trung khop",Toast.LENGTH_LONG).show();
                     }
 
                 }
@@ -61,15 +57,15 @@ public class register extends AppCompatActivity {
             @Override
             public void onResponse(String s) {
                 if(s.equals("thanhcong")){
-                    startActivity(new Intent(register.this , MainActivity.class));
-                    Toast.makeText(register.this,"Dang Ki Thanh Cong",Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(RegisterActivity.this , MainActivity.class));
+                    Toast.makeText(RegisterActivity.this,"Dang Ki Thanh Cong",Toast.LENGTH_LONG).show();
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
                 Log.i("TAG1", volleyError.toString());
-                Toast.makeText(register.this,volleyError.toString(),Toast.LENGTH_LONG).show();
+                Toast.makeText(RegisterActivity.this,volleyError.toString(),Toast.LENGTH_LONG).show();
 
             }
         }){

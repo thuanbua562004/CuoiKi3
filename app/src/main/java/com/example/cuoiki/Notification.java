@@ -1,12 +1,12 @@
 package com.example.cuoiki;
 
-public class notication {
+public class Notification {
     public String name ;
     public String notication_info ;
     public  String img ;
     public  String date ;
 
-    public notication(String name, String notication_info, String img, String date) {
+    public Notification(String name, String notication_info, String img, String date) {
         this.name = name;
         this.notication_info = notication_info;
         this.img = img;

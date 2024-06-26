@@ -1,11 +1,9 @@
 package com.example.cuoiki;
 
-import android.content.SharedPreferences;
-import android.media.MediaCodec;
-import android.os.AsyncTask;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ArrayAdapter;
+import android.view.LayoutInflater;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -21,17 +19,14 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+
 import java.util.ArrayList;
 
-public class NotificationActivity extends AppCompatActivity {
-    private ArrayList<notication> arrayListNoti;
+public class NotificationActivity extends AppCompatActivity implements NotificationAdapter.OnItemClickListener {
+    private ArrayList<Notification> arrayListNoti;
     private ListView listView;
-    private notication_apdapter adapter;
-    private String url = "http://192.168.1.25/QLSV/getnotification.php";
+    private NotificationAdapter adapter;
+    private String url = "http://192.168.1.19/QLSV/getnotification.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +34,7 @@ public class NotificationActivity extends AppCompatActivity {
         setContentView(R.layout.thongtintruong);
         listView = findViewById(R.id.listview);
         arrayListNoti = new ArrayList<>();
-        adapter = new notication_apdapter(arrayListNoti, this);
+        adapter = new NotificationAdapter(arrayListNoti, LayoutInflater.from(this), this);
         listView.setAdapter(adapter);
         getNotification();
     }
@@ -54,7 +49,7 @@ public class NotificationActivity extends AppCompatActivity {
                         for (int i = 0; i < jsonArray.length(); i++) {
                             try {
                                 JSONObject object = jsonArray.getJSONObject(i);
-                                arrayListNoti.add(new notication(
+                                arrayListNoti.add(new Notification(
                                         object.getString("name"),
                                         object.getString("notification_info"),
                                         object.getString("notifi_ing"),
@@ -84,5 +79,12 @@ public class NotificationActivity extends AppCompatActivity {
                 .setMessage(message)
                 .setPositiveButton("OK", null)
                 .show();
+    }
+
+    @Override
+    public void onItemClick(Notification notification) {
+        Intent myIntent = new Intent(NotificationActivity.this, NotifidetailActivity.class);
+        myIntent.putExtra("data", notification.toString()); // Ensure Notification has a proper toString() or use Parcelable
+        startActivity(myIntent);
     }
 }
