@@ -20,17 +20,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class UserActivity extends MainActivity {
-    public TextView txtHoTen ;
-    public  TextView txtMssv ;
-    public TextView txtNamsinh ;
-    public TextView  txtQuequan;
-    public  TextView txtNganhhoc ;
-    public TextView txtEmail;
-    String url = "http://192.168.1.19/QLSV/user.php"; // Thay đổi địa chỉ URL phù hợp với server của bạn
+    public TextView txtHoTen ,txtMssv,txtNamsinh, txtQuequan,txtNganhhoc,txtEmail;
+    ArrayList<SinhVien> arrayList =new ArrayList<>();
+    String url ="http://192.168.40.104/QLSV/user.php";
     public  String mssv ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,19 +35,22 @@ public class UserActivity extends MainActivity {
         setContentView(R.layout.chitietsinhvien);
         anhxa();
         mssv = getMssv();
+        Log.i("TAG1", "onCreate: "+mssv);
         getThongTinSv(url, mssv);
     }
 
-    private void anhxa() {
+    public void anhxa() {
         txtEmail = findViewById(R.id.txtemail);
         txtMssv = findViewById(R.id.txtmssv);
         txtHoTen = findViewById(R.id.txthoten);
         txtNamsinh = findViewById(R.id.txtnamsinh);
         txtNganhhoc = findViewById(R.id.txtnganhhoc);
         txtQuequan = findViewById(R.id.txtquequan);
+        txtEmail = findViewById(R.id.txtemail);
     }
 
-    private void getThongTinSv(String url, String mssv) {
+    public void getThongTinSv(String url, String mssv) {
+        arrayList.clear();
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
@@ -66,17 +66,13 @@ public class UserActivity extends MainActivity {
                                 obj.getString("quequan"),
                                 obj.getString("ngaysinh"),
                                 obj.getString("nganhhoc"),
-                                obj.getString("hoten")
+                                obj.getString("hoten"),
+                                obj.getString("email")
                         );
                         arrayList.add(sv);
                     }
-
-                    if (!arrayList.isEmpty()) {
-                        SinhVien sv = arrayList.get(0);
-                        setThongTin(sv);
-                        Log.i("TAG1", sv.getHoten());
-                    }
-
+                    SinhVien sv = arrayList.get(0);
+                    setThongTin(sv);
                 } catch (JSONException e) {
                     throw new RuntimeException(e);
                 }
@@ -98,9 +94,11 @@ public class UserActivity extends MainActivity {
         requestQueue.add(stringRequest);
     }
 
+
     private String getMssv() {
-        SharedPreferences sharedpreferences = getSharedPreferences(MainActivity.MyPREFERENCES, Context.MODE_PRIVATE);
-        return sharedpreferences.getString("mssvkey", "");
+        SharedPreferences sharedPref = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
+        String mssv = sharedPref.getString("key", "");
+        return mssv ;
     }
 
     private void setThongTin(SinhVien sv) {
@@ -109,5 +107,6 @@ public class UserActivity extends MainActivity {
         txtNamsinh.setText("Ngay Sinh: "+sv.getNgaysinh());
         txtQuequan.setText("Que Quan: "+sv.getQuequan());
         txtNganhhoc.setText("Nganh Hoc: "+sv.getNganhhoc());
+        txtEmail.setText("Email :"+ sv.getEmail());
     }
 }

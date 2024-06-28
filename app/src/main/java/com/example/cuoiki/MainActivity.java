@@ -31,13 +31,10 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     private EditText txtUsername, txtPassword;
     private Button btnLogin, btnRegister;
-    private static final String url = "http://192.168.1.19/QLSV/login.php";
+    private static final String url = "http://192.168.40.104/QLSV/login.php";
     public ArrayList<SinhVien> arrayList;
     public static final String MyPREFERENCES = "mystore" ;
     public static final String mssvkey = "mssvkey";
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,60 +66,65 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void login(String url) {
+    public void login(String url) {
+        arrayList.clear();
         String username = txtUsername.getText().toString().trim();
         String password = txtPassword.getText().toString().trim();
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            public Context context;
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONArray jsonArray = new JSONArray(response);
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject obj = jsonArray.getJSONObject(i);
-                        SinhVien sv = new SinhVien(
-                                obj.getString("username"),
-                                obj.getString("password"),
-                                obj.getString("mssv"),
-                                obj.getString("quequan"),
-                                obj.getString("ngaysinh"),
-                                obj.getString("nganhhoc"),
-                                obj.getString("hoten")
-                        );
-                        arrayList.add(sv);
+        if (username.isEmpty() || password.isEmpty()) {
+            showErrorDialog("Vui Long Nhap Day Du Thong Tin");
+        } else {
+            RequestQueue requestQueue = Volley.newRequestQueue(this);
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    if(response.equals("thatbai")){
+                        Log.i("TAG1", response.toString());
+                        showErrorDialog("Khong Dung Tai Khoan Mat Khau");
+                        return;
+                    }else {
+                        try {
+                            JSONArray jsonArray = new JSONArray(response);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject obj = jsonArray.getJSONObject(i);
+                                SinhVien sv = new SinhVien(
+                                  obj.getString("mssv")
+                                );
+                                arrayList.add(sv);
+                            }
+                            SinhVien sv = arrayList.get(0);
+                            Log.i("TAG1", sv.getMssv().toString());
+                            Log.i("TAG1", response.toString());
+                            session(sv.getMssv().toString());
+                            startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                        } catch (JSONException e) {
+                            throw new RuntimeException(e);
+                        }
                     }
-                    SinhVien sv = arrayList.get(0);
-                    Log.i("TAG1", sv.getMssv().toString());
-                    session(sv.getMssv().toString());
-                    startActivity(new Intent(MainActivity.this , HomeActivity.class));
-                } catch (JSONException e) {
-                    throw new RuntimeException(e);
+
                 }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.i("TAG1", error.toString());
-                showErrorDialog("Server error");
-            }
-        }) {
-            @Override
-            protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<>();
-                params.put("username", username);
-                params.put("password", password);
-                return params;
-            }
-        };
-        requestQueue.add(stringRequest);
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.i("TAG1", error.toString());
+                    showErrorDialog("Server error");
+                }
+            }) {
+                @Override
+                protected Map<String, String> getParams() {
+                    Map<String, String> params = new HashMap<>();
+                    params.put("username", username);
+                    params.put("password", password);
+                    return params;
+                }
+            };
+            requestQueue.add(stringRequest);
+        }
     }
-    public void session (String mssv ){
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        editor = sharedPreferences.edit();
-        editor.putString(mssvkey, mssv);
-        editor.commit();
+    public void session (String mssv){
+        SharedPreferences sharedPref = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("key", mssv);
+        editor.apply();
     }
 
 
