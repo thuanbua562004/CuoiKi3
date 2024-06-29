@@ -1,16 +1,27 @@
 package com.example.cuoiki;
 
+import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -24,6 +35,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -31,9 +46,12 @@ import java.util.Map;
 
 public class UserUpdate extends AppCompatActivity {
     String url ="http://192.168.1.41/QLSV/updateuser.php" ;
-    EditText edtname ,edtemail ,edtquequan, edtnamsinh,edtnganhhoc,edtimg ;
+    EditText edtname ,edtemail ,edtquequan, edtnamsinh,edtnganhhoc ;
     String txtname ,txtemail ,txtquequan, txtnamsinh,txtnganhhoc,txtimg ;
-    Button btnupdate , btnchoseImg;
+    Button btnupdate ;
+    ImageButton btnchoseImg;
+    private static final int REQUEST_CODE_PICK_IMAGE = 2;
+    private static final int REQUEST_CODE_PERMISSION = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +63,26 @@ public class UserUpdate extends AppCompatActivity {
                 updateUser(url);
             }
         });
+        btnchoseImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    // Mở gallery để chọn ảnh
+                    Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    startActivityForResult(intent, REQUEST_CODE_PICK_IMAGE);
+            }
+        });
+
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 2 && resultCode == RESULT_OK && data != null) {
+            Uri selectedImage = data.getData();
+            Log.i("TAG1", "onActivityResult: " +data);
+            // Hiển thị ảnh đã chọn lên ImageView
+            ImageView imageView = findViewById(R.id.imgacount);
+            imageView.setImageURI(selectedImage);
+        }
     }
 
     private void updateUser(String url ) {
@@ -53,6 +91,8 @@ public class UserUpdate extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 Log.i("TAG1", "onResponse:" + response.toString());
+                Toast.makeText(UserUpdate.this ,"Cap Nhat Thanh Cong",Toast.LENGTH_LONG).show();
+                startActivity(new Intent(UserUpdate.this,HomeActivity.class));
             }
         }, new Response.ErrorListener() {
             @Override
@@ -114,6 +154,7 @@ public class UserUpdate extends AppCompatActivity {
         edtnamsinh =findViewById(R.id.txtnamsinh);
         edtnganhhoc =findViewById(R.id.txtnganhoc);
         btnupdate = findViewById(R.id.update);
+        btnchoseImg = findViewById(R.id.openpicture);
     }
 
 }

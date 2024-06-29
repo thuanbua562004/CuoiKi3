@@ -13,7 +13,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MenuUser extends AppCompatActivity {
-    Button btnCapNhat , btnChiTietSv , btnDangXuat ;
+    Button btnCapNhat , btnChiTietSv , btnDangXuat ,btnLichHoc ;
     ImageButton news,user,home ,menu;
 
     @Override
@@ -38,12 +38,19 @@ public class MenuUser extends AppCompatActivity {
                 startActivity(new Intent(MenuUser.this , UserUpdate.class));
             }
         });
+        btnLichHoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MenuUser.this , LichHocActivity.class));
+            }
+        });
     }
 
     private void anhxa() {
         btnCapNhat =findViewById(R.id.capnhatsv);
         btnChiTietSv = findViewById(R.id.chitietsv);
         btnDangXuat = findViewById(R.id.dangxuat);
+        btnLichHoc = findViewById(R.id.lichhoc);
         user = findViewById(R.id.user);
         home = findViewById(R.id.home);
         news  =findViewById(R.id.news);

@@ -7,369 +7,57 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_weight="20"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="2">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="268dp"
-                android:layout_weight="2"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/nameApp"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@color/primarykey_color_btn"
-                    android:gravity="center"
-                    android:text="Lich Hoc Theo Tuan"
-                    android:textColor="@color/primarykey_color_text"
-                    android:textSize="25dp" />
-
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="15dp"
-                    android:text="Ngày: 24/6/2024"
-                    android:textColor="@color/black"
-                    android:textSize="25dp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-
-                    <ImageButton
-                        android:id="@+id/imageButton2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/back" />
-
-                    <ImageButton
-                        android:id="@+id/imageButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/now" />
-
-                    <ImageButton
-                        android:id="@+id/imageButton3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/next" />
-
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="470dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginBottom="30dp"
-                android:layout_weight="5"
-                android:orientation="vertical">
-
-
-                <ScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical" >
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/ds"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Thứ 2(24/06/2024)"
-                                android:textSize="25dp"
-                                android:textColor="#00bfff"/>
-
-                            <TextView
-                                android:id="@+id/fsa"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Mon Hoc: Lap trinh di dong"
-                                android:textSize="20dp" />
-
-                            <TextView
-                                android:id="@+id/saf"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Phong: 602"
-                                android:textSize="20dp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/gsfa"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Thứ 3(25/06/2024)"
-                                android:textSize="25dp"
-                                android:textColor="#00bfff"/>
-
-                            <TextView
-                                android:id="@+id/gsdaf"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Mon Hoc: Lap trinh di dong"
-                                android:textSize="20dp" />
-
-                            <TextView
-                                android:id="@+id/agsaga"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Phong: 602"
-                                android:textSize="20dp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/gasf"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Thứ 4(26/06/2024)"
-                                android:textSize="25dp"
-                                android:textColor="#00bfff"/>
-
-                            <TextView
-                                android:id="@+id/asfas"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Mon Hoc: Lap trinh di dong"
-                                android:textSize="20dp" />
-
-                            <TextView
-                                android:id="@+id/gsaas"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Phong: 602"
-                                android:textSize="20dp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/thu5"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Thứ 5(27/06/2024)"
-                                android:textSize="25dp"
-                                android:textColor="#00bfff"/>
-
-                            <TextView
-                                android:id="@+id/monhoc5"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Mon Hoc: Lap trinh di dong"
-                                android:textSize="20dp" />
-
-                            <TextView
-                                android:id="@+id/hsga"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Phong: 602"
-                                android:textSize="20dp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/wrdd"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Thứ 6(28/06/2024)"
-                                android:textSize="25dp"
-                                android:textColor="#00bfff"/>
-
-                            <TextView
-                                android:id="@+id/textView20"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Mon Hoc: Lap trinh di dong"
-                                android:textSize="20dp" />
-
-                            <TextView
-                                android:id="@+id/wrw"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Phong: 602"
-                                android:textSize="20dp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-                            <TextView
-                                android:id="@+id/gsf"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Thứ 7(29/06/2024)"
-                                android:textSize="25dp"
-                                android:textColor="#00bfff"/>
-
-                            <TextView
-                                android:id="@+id/safas"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Mon Hoc: Lap trinh di dong"
-                                android:textSize="20dp" />
-
-                            <TextView
-                                android:id="@+id/asf"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Phong: 602"
-                                android:textSize="20dp" />
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-                            <TextView
-                                android:id="@+id/asfa"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Chủ Nhật(30/06/2024)"
-                                android:textSize="25dp"
-                                android:textColor="#00bfff"/>
-
-                            <TextView
-                                android:id="@+id/gsg"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Mon Hoc: Lap trinh di dong"
-                                android:textSize="20dp" />
-
-                            <TextView
-                                android:id="@+id/zv"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Phong: 602"
-                                android:textSize="20dp" />
-
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-                </ScrollView>
-
-            </LinearLayout>
-
-        </RelativeLayout>
         <LinearLayout
-            android:background="@color/primarykey_color_btn"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="25">
-            <ImageButton
-                android:contentDescription="Home"
-                android:id="@+id/home"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="6"
-                android:background="@null"
-                app:srcCompat="@drawable/home" />
-            <ImageButton
-                android:contentDescription="News"
-                android:id="@+id/news"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@null"
-                android:layout_weight="5"
-                app:srcCompat="@drawable/news" />
-            <ImageButton
-                android:contentDescription="Users"
-                android:id="@+id/user"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="5"
-                android:background="@null"
-                app:srcCompat="@drawable/user" />
-            <ImageButton
-                android:contentDescription="Menu"
-                android:id="@+id/menu"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="5"
-                android:background="@null"
-                app:srcCompat="@drawable/menu" />
-        </LinearLayout>
-    </LinearLayout>
 
+            android:gravity="center"
+            android:layout_weight="5"
+            android:layout_width="match_parent"
+            android:layout_height="159dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:gravity="center"
+                android:layout_weight="1"
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mon Hoc : Phap Luat Hang Khong" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_weight="1"
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thoi Gian : 7:00 -> 10:30" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_weight="1"
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Giao Vien : Nguyen Thi Khanh Hoa" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_weight="1"
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ngay: 25/2/2025" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_weight="1"
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phong : G505" />
+        </LinearLayout>
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

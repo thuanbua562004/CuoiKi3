@@ -31,7 +31,6 @@ public class NotificationActivity extends AppCompatActivity {
     private NotificationAdapter adapter;
     private String url = "http://192.168.1.41/QLSV/getnotification.php";
     ImageButton news,user,home ,menu;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +42,18 @@ public class NotificationActivity extends AppCompatActivity {
         getNotification();
         anhxa();
         menubar();
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(NotificationActivity.this, NotifidetailActivity.class);
+                Notification notification = arrayListNoti.get(position);
+                intent.putExtra("name",notification.getName().toString());
+                intent.putExtra("info",notification.getNotication_info().toString());
+                intent.putExtra("date",notification.getDate().toString());
+                intent.putExtra("img",notification.getImg().toString());
+                startActivity(intent);
+            }
+        });
     }
 
     private void getNotification() {

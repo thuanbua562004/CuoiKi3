@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -16,6 +18,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".LichHocActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserUpdate"
             android:exported="false" />
         <activity
@@ -26,6 +31,9 @@
             android:exported="false" />
         <activity
             android:name=".NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NotifidetailActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"

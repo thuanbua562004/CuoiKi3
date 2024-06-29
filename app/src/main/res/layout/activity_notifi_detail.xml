@@ -24,7 +24,7 @@
             android:text="Thông Bao" />
 
         <TextView
-            android:id="@+id/textView19"
+            android:id="@+id/txtTitle"
             android:layout_width="match_parent"
             android:layout_height="32dp"
             android:layout_marginTop="25dp"
@@ -32,14 +32,14 @@
             android:text="Tieu de thong bao " />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/imgnoti"
             android:layout_width="match_parent"
             android:layout_height="158dp"
             android:layout_marginTop="20dp"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/textView21"
+            android:id="@+id/txtinfo"
             android:layout_width="match_parent"
             android:layout_height="290dp"
             android:text="Noi Dung Thong Bao" />

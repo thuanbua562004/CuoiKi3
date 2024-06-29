@@ -15,7 +15,6 @@ import java.util.ArrayList;
 class NotificationAdapter extends BaseAdapter {
     private ArrayList<Notification> arrNoti;
     private LayoutInflater inflater;
-    View imgopen ;
     NotificationActivity conText ;
     public NotificationAdapter(ArrayList<Notification> notifications, NotificationActivity context) {
         this.arrNoti = notifications;
@@ -44,17 +43,8 @@ class NotificationAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.list_noti, parent, false);
         }
         TextView txtUsername = convertView.findViewById(R.id.nameNoti);
-        imgopen = convertView.findViewById(R.id.imgopen);
         Notification tb = arrNoti.get(position);
         txtUsername.setText(tb.getName());
-        imgopen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myIntent  = new Intent(conText, NotifidetailActivity.class);
-                Log.i("TAG1", "onClick: "  + tb.getNotication_info());
-            }
-        });
-
         return convertView;
     }
     }

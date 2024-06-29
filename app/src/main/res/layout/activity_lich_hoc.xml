@@ -24,55 +24,22 @@
                 android:layout_height="50dp"
                 android:background="@color/primarykey_color_btn"
                 android:gravity="center"
-                android:text="Thong tin ca nhan"
+                android:text="LICH HOC"
                 android:textColor="@color/primarykey_color_text"
                 android:textSize="25dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="478dp"
-                android:layout_alignParentTop="true"
+            <ListView
+                android:id="@+id/listlichhoc"
+                android:layout_width="324dp"
+                android:layout_height="466dp"
+                android:layout_below="@+id/nameApp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginTop="99dp"
-                android:layout_marginBottom="100dp"
-                android:layout_weight="5"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/chitietsv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Chi Tiet Sinh Vien"
-                    android:textSize="25dp" />
-
-                <Button
-                    android:layout_weight="1"
-                    android:id="@+id/capnhatsv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="25dp"
-                    android:gravity="center"
-                    android:text="Cap nhat sinh vien" />
-                <Button
-                    android:layout_weight="1"
-                    android:id="@+id/lichhoc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="25dp"
-                    android:gravity="center"
-                    android:text="Lich Hoc" />
-
-                <Button
-                    android:layout_weight="1"
-                    android:id="@+id/dangxuat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="25dp"
-                    android:gravity="center"
-                    android:text="Dang xuat" />
-            </LinearLayout>
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="75dp"
+                android:layout_marginEnd="44dp"
+                android:layout_marginBottom="75dp" />
 
         </RelativeLayout>
 

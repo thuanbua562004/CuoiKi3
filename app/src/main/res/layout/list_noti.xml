@@ -19,20 +19,11 @@
 
             <TextView
                 android:id="@+id/nameNoti"
-                android:layout_width="360dp"
+                android:layout_width="422dp"
                 android:layout_height="69dp"
                 android:gravity="center"
-                android:textSize="18dp"
-                android:text="" />
-
-            <ImageView
-                android:id="@+id/imgopen"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:background="@null"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/open" />
+                android:text=""
+                android:textSize="18dp" />
 
         </LinearLayout>
     </LinearLayout>
