@@ -8,7 +8,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="41dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -17,18 +19,20 @@
 
             <TextView
                 android:id="@+id/nameNoti"
-                android:layout_width="325dp"
+                android:layout_width="360dp"
                 android:layout_height="69dp"
                 android:gravity="center"
-                android:text="Name" />
+                android:textSize="18dp"
+                android:text="" />
 
-            <TextView
-                android:id="@+id/dateNoti"
-                android:layout_width="178dp"
-                android:layout_height="68dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Date" />
+            <ImageView
+                android:id="@+id/imgopen"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/open" />
 
         </LinearLayout>
     </LinearLayout>

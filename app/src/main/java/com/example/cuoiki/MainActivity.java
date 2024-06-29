@@ -31,7 +31,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     private EditText txtUsername, txtPassword;
     private Button btnLogin, btnRegister;
-    private static final String url = "http://192.168.40.104/QLSV/login.php";
+    private static final String url = "http://192.168.1.41/QLSV/login.php";
     public ArrayList<SinhVien> arrayList;
     public static final String MyPREFERENCES = "mystore" ;
     public static final String mssvkey = "mssvkey";
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                             SinhVien sv = arrayList.get(0);
                             Log.i("TAG1", sv.getMssv().toString());
                             Log.i("TAG1", response.toString());
-                            session(sv.getMssv().toString());
+                            session(sv.getMssv().toString(), sv);
                             startActivity(new Intent(MainActivity.this, HomeActivity.class));
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             requestQueue.add(stringRequest);
         }
     }
-    public void session (String mssv){
+    public void session (String mssv, SinhVien sv){
         SharedPreferences sharedPref = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString("key", mssv);

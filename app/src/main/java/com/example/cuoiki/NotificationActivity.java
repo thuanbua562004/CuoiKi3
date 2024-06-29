@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -22,11 +25,12 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class NotificationActivity extends AppCompatActivity implements NotificationAdapter.OnItemClickListener {
+public class NotificationActivity extends AppCompatActivity {
     private ArrayList<Notification> arrayListNoti;
     private ListView listView;
     private NotificationAdapter adapter;
-    private String url = "http://192.168.40.104/QLSV/getnotification.php";
+    private String url = "http://192.168.1.41/QLSV/getnotification.php";
+    ImageButton news,user,home ,menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +38,11 @@ public class NotificationActivity extends AppCompatActivity implements Notificat
         setContentView(R.layout.thongtintruong);
         listView = findViewById(R.id.listview);
         arrayListNoti = new ArrayList<>();
-        adapter = new NotificationAdapter(arrayListNoti, LayoutInflater.from(this), this);
+        adapter = new NotificationAdapter(arrayListNoti, NotificationActivity.this);
         listView.setAdapter(adapter);
         getNotification();
+        anhxa();
+        menubar();
     }
 
     private void getNotification() {
@@ -80,11 +86,33 @@ public class NotificationActivity extends AppCompatActivity implements Notificat
                 .setPositiveButton("OK", null)
                 .show();
     }
+    public void menubar(){
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NotificationActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
+        user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NotificationActivity.this , UserActivity.class));
+            }
+        });
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NotificationActivity.this , MenuUser.class));
+            }
+        });
 
-    @Override
-    public void onItemClick(Notification notification) {
-        Intent myIntent = new Intent(NotificationActivity.this, NotifidetailActivity.class);
-        myIntent.putExtra("data", notification.toString()); // Ensure Notification has a proper toString() or use Parcelable
-        startActivity(myIntent);
+    }
+    public void anhxa(){
+        user = findViewById(R.id.user);
+        home = findViewById(R.id.home);
+        news  =findViewById(R.id.news);
+        menu = findViewById(R.id.menu);
+
     }
 }

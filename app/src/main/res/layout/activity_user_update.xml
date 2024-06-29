@@ -82,7 +82,7 @@
                         android:textSize="18dp" />
 
                     <EditText
-                        android:id="@+id/editTextText"
+                        android:id="@+id/txtname"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:layout_weight="1"
@@ -107,7 +107,7 @@
                         android:textSize="18dp" />
 
                     <EditText
-                        android:id="@+id/editTextText2"
+                        android:id="@+id/txtemail"
                         android:layout_width="wrap_content"
                         android:layout_height="48dp"
                         android:layout_weight="3"
@@ -133,7 +133,7 @@
                         android:textSize="18dp" />
 
                     <EditText
-                        android:id="@+id/editTextText3"
+                        android:id="@+id/txtquequan"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:layout_weight="1"
@@ -159,7 +159,7 @@
                         android:textSize="18dp" />
 
                     <EditText
-                        android:id="@+id/editTextText4"
+                        android:id="@+id/txtnamsinh"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:layout_weight="1"
@@ -185,7 +185,7 @@
                         android:textSize="18dp" />
 
                     <EditText
-                        android:id="@+id/editTextText5"
+                        android:id="@+id/txtnganhoc"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:layout_weight="1"
@@ -202,7 +202,7 @@
                     android:orientation="vertical">
 
                     <Button
-                        android:id="@+id/button2"
+                        android:id="@+id/update"
                         android:layout_width="wrap_content"
                         android:layout_height="48dp"
                         android:layout_gravity="center"

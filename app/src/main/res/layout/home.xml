@@ -18,62 +18,6 @@
             android:layout_height="match_parent"
             android:layout_weight="2">
 
-            <LinearLayout
-                android:layout_width="332dp"
-                android:layout_height="135dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginEnd="36dp"
-                android:layout_marginBottom="192dp"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <ImageButton
-                        android:contentDescription="Tim Kiem"
-                        android:id="@+id/ddsaf"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:srcCompat="@drawable/search" />
-
-                    <TextView
-                        android:id="@+id/textVifew16"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Tim Kiem" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <ImageButton
-                        android:contentDescription="Lich"
-                        android:id="@+id/imageButfaton4"
-                        android:layout_width="match_parent"
-                        android:layout_height="65dp"
-                        android:layout_weight="1"
-                        app:srcCompat="@drawable/calenda" />
-
-                    <TextView
-                        android:id="@+id/textVidsfaew16"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Lich Hoc" />
-                </LinearLayout>
-            </LinearLayout>
-
             <TextView
                 android:id="@+id/nameApp"
                 android:layout_width="match_parent"
@@ -83,67 +27,6 @@
                 android:text="Quản Lí Sinh Viên"
                 android:textColor="@color/primarykey_color_text"
                 android:textSize="25dp" />
-
-            <LinearLayout
-                android:layout_width="335dp"
-                android:layout_height="123dp"
-                android:layout_below="@+id/nameApp"
-                android:layout_alignParentBottom="true"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="124dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginBottom="381dp"
-                android:layout_weight="2"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <ImageButton
-                        android:contentDescription="Tin tuc"
-                        android:id="@+id/imageButton4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:srcCompat="@drawable/notifi" />
-
-                    <TextView
-                        android:id="@+id/textView16"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Tin Tuc" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <ImageButton
-                        android:contentDescription="Thong Bao"
-                        android:id="@+id/imgthongbao"
-                        android:layout_width="match_parent"
-                        android:layout_height="78dp"
-                        android:layout_weight="1"
-                        app:srcCompat="@drawable/bell" />
-
-                    <TextView
-                        android:id="@+id/textView17"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Thong Bao" />
-
-                </LinearLayout>
-
-            </LinearLayout>
 
         </RelativeLayout>
 

@@ -8,16 +8,16 @@ import android.view.View;
 import android.widget.ImageButton;
 
 public class HomeActivity extends AppCompatActivity {
-    ImageButton imgthongbao  ,news,user,homme ,menu;
+    ImageButton   news,user,home ,menu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
         anhxa();
-        slsk();
+        menubar();
     }
-    public void slsk(){
-        imgthongbao.setOnClickListener(new View.OnClickListener() {
+    public void menubar(){
+        news.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, NotificationActivity.class);
@@ -39,9 +39,8 @@ public class HomeActivity extends AppCompatActivity {
 
     }
     public void anhxa(){
-        imgthongbao = findViewById(R.id.imgthongbao);
         user = findViewById(R.id.user);
-        homme = findViewById(R.id.home);
+        home = findViewById(R.id.home);
         news  =findViewById(R.id.news);
         menu = findViewById(R.id.menu);
 

@@ -1,9 +1,12 @@
 package com.example.cuoiki;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -27,8 +30,10 @@ import java.util.Map;
 public class UserActivity extends MainActivity {
     public TextView txtHoTen ,txtMssv,txtNamsinh, txtQuequan,txtNganhhoc,txtEmail;
     ArrayList<SinhVien> arrayList =new ArrayList<>();
-    String url ="http://192.168.40.104/QLSV/user.php";
+    String url ="http://192.168.1.41/QLSV/user.php";
     public  String mssv ;
+    ImageButton news,user,home ,menu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,18 +42,8 @@ public class UserActivity extends MainActivity {
         mssv = getMssv();
         Log.i("TAG1", "onCreate: "+mssv);
         getThongTinSv(url, mssv);
+        menubar();
     }
-
-    public void anhxa() {
-        txtEmail = findViewById(R.id.txtemail);
-        txtMssv = findViewById(R.id.txtmssv);
-        txtHoTen = findViewById(R.id.txthoten);
-        txtNamsinh = findViewById(R.id.txtnamsinh);
-        txtNganhhoc = findViewById(R.id.txtnganhhoc);
-        txtQuequan = findViewById(R.id.txtquequan);
-        txtEmail = findViewById(R.id.txtemail);
-    }
-
     public void getThongTinSv(String url, String mssv) {
         arrayList.clear();
         RequestQueue requestQueue = Volley.newRequestQueue(this);
@@ -72,6 +67,15 @@ public class UserActivity extends MainActivity {
                         arrayList.add(sv);
                     }
                     SinhVien sv = arrayList.get(0);
+                    SharedPreferences sharedPref = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putString("key", mssv);
+                    editor.putString("quequan", sv.getQuequan().toString());
+                    editor.putString("ngaysinh",sv.getNgaysinh().toString());
+                    editor.putString("email", sv.getEmail().toString());
+                    editor.putString("hoten", sv.getHoten().toString());
+                    editor.putString("nganhhoc",sv.getNganhhoc().toString());
+                    editor.apply();
                     setThongTin(sv);
                 } catch (JSONException e) {
                     throw new RuntimeException(e);
@@ -107,6 +111,41 @@ public class UserActivity extends MainActivity {
         txtNamsinh.setText("Ngay Sinh: "+sv.getNgaysinh());
         txtQuequan.setText("Que Quan: "+sv.getQuequan());
         txtNganhhoc.setText("Nganh Hoc: "+sv.getNganhhoc());
-        txtEmail.setText("Email :"+ sv.getEmail());
+        txtEmail.setText("Email: "+ sv.getEmail());
+    }
+    public void menubar(){
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
+        news.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UserActivity.this , NotificationActivity.class));
+            }
+        });
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UserActivity.this , MenuUser.class));
+            }
+        });
+
+    }
+    public void anhxa() {
+        user = findViewById(R.id.user);
+        home = findViewById(R.id.home);
+        news  =findViewById(R.id.news);
+        menu = findViewById(R.id.menu);
+        txtEmail = findViewById(R.id.txtemail);
+        txtMssv = findViewById(R.id.txtmssv);
+        txtHoTen = findViewById(R.id.txthoten);
+        txtNamsinh = findViewById(R.id.txtnamsinh);
+        txtNganhhoc = findViewById(R.id.txtnganhhoc);
+        txtQuequan = findViewById(R.id.txtquequan);
+        txtEmail = findViewById(R.id.txtemail);
     }
 }

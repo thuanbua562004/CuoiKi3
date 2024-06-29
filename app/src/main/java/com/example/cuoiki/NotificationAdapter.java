@@ -1,9 +1,13 @@
 package com.example.cuoiki;
 
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -11,12 +15,12 @@ import java.util.ArrayList;
 class NotificationAdapter extends BaseAdapter {
     private ArrayList<Notification> arrNoti;
     private LayoutInflater inflater;
-    private OnItemClickListener onItemClickListener;
-
-    public NotificationAdapter(ArrayList<Notification> notifications, LayoutInflater inflater, OnItemClickListener onItemClickListener) {
+    View imgopen ;
+    NotificationActivity conText ;
+    public NotificationAdapter(ArrayList<Notification> notifications, NotificationActivity context) {
         this.arrNoti = notifications;
-        this.inflater = inflater;
-        this.onItemClickListener = onItemClickListener;
+        inflater = LayoutInflater.from(context);
+        NotificationActivity conText = context;
     }
 
     @Override
@@ -36,37 +40,21 @@ class NotificationAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder;
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.list_noti, parent, false);
-            holder = new ViewHolder();
-            holder.txtUsername = convertView.findViewById(R.id.nameNoti);
-            holder.txtUserdate = convertView.findViewById(R.id.dateNoti);
-            convertView.setTag(holder);
-        } else {
-            holder = (ViewHolder) convertView.getTag();
         }
-
-        final Notification notification = arrNoti.get(position);
-        holder.txtUsername.setText(notification.getName());
-        holder.txtUserdate.setText(notification.getDate());
-
-        convertView.setOnClickListener(new View.OnClickListener() {
+        TextView txtUsername = convertView.findViewById(R.id.nameNoti);
+        imgopen = convertView.findViewById(R.id.imgopen);
+        Notification tb = arrNoti.get(position);
+        txtUsername.setText(tb.getName());
+        imgopen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onItemClickListener.onItemClick(notification);
+                Intent myIntent  = new Intent(conText, NotifidetailActivity.class);
+                Log.i("TAG1", "onClick: "  + tb.getNotication_info());
             }
         });
 
         return convertView;
     }
-
-    static class ViewHolder {
-        TextView txtUsername;
-        TextView txtUserdate;
     }
-
-    public interface OnItemClickListener {
-        void onItemClick(Notification notification);
-    }
-}
