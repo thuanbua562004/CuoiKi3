@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -30,7 +31,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.FileHandler;
 
-public class UserActivity extends MainActivity {
+public class UserActivity extends AppCompatActivity {
     public TextView txtHoTen ,txtMssv,txtNamsinh, txtQuequan,txtNganhhoc,txtEmail;
     ArrayList<SinhVien> arrayList =new ArrayList<>();
     String url ="http://192.168.1.41/QLSV/user.php";
@@ -44,7 +45,9 @@ public class UserActivity extends MainActivity {
         anhxa();
         mssv = getMssv();
         Log.i("TAG1", "onCreate: "+mssv);
-        getThongTinSv(url, mssv);
+       if(!mssv.isEmpty()){
+           getThongTinSv(url , mssv);
+       }
         menubar();
     }
     public void getThongTinSv(String url, String mssv) {
@@ -79,6 +82,7 @@ public class UserActivity extends MainActivity {
                     editor.putString("hoten", sv.getHoten().toString());
                     editor.putString("nganhhoc",sv.getNganhhoc().toString());
                     editor.apply();
+                    //////////set thong tin len layout
                     setThongTin(sv);
                 } catch (JSONException e) {
                     throw new RuntimeException(e);

@@ -39,14 +39,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         arrayList = new ArrayList<>();
+        setContentView(R.layout.login);
         SharedPreferences sharedPref = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
         String mssv = sharedPref.getString("key", "");
-        setContentView(R.layout.login);
-        anhxa();
-        xulisk();
         if(!mssv.isEmpty()){
             startActivity(new Intent(MainActivity.this, HomeActivity.class));
+            finish();
         }
+            anhxa();
+            xulisk();
+
     }
 
     private void anhxa() {
@@ -101,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
                             Log.i("TAG1", response.toString());
                             session(sv.getMssv().toString(), sv);
                             startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                            finish();
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
                         }

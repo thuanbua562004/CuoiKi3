@@ -1,9 +1,13 @@
 
 package com.example.cuoiki;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -15,6 +19,9 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.home);
         anhxa();
         menubar();
+        SharedPreferences sharedPref = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
+        String mssv = sharedPref.getString("key", "");
+        Log.e("TAG1", "onCreate: " + mssv  );
     }
     public void menubar(){
         news.setOnClickListener(new View.OnClickListener() {
