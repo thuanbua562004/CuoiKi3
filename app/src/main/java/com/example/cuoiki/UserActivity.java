@@ -73,6 +73,7 @@ public class UserActivity extends AppCompatActivity {
                         arrayList.add(sv);
                     }
                     SinhVien sv = arrayList.get(0);
+                    Log.i("TAG1", "onResponse: "+ arrayList.toString());
                     SharedPreferences sharedPref = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPref.edit();
                     editor.putString("key", mssv);

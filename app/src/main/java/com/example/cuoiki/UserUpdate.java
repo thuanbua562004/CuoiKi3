@@ -9,6 +9,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -35,8 +37,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
@@ -50,12 +55,16 @@ public class UserUpdate extends AppCompatActivity {
     String txtname ,txtemail ,txtquequan, txtnamsinh,txtnganhhoc,txtimg ;
     Button btnupdate ;
     ImageButton btnchoseImg;
+    Bitmap bitmap ;
     private static final int REQUEST_CODE_PICK_IMAGE = 2;
     private static final int REQUEST_CODE_PERMISSION = 1;
+    public String mssv ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_update);
+        SharedPreferences sharedPref = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
+        mssv = sharedPref.getString("key", "");
         anhxa();
         btnupdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,11 +86,49 @@ public class UserUpdate extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 2 && resultCode == RESULT_OK && data != null) {
-            Uri selectedImage = data.getData();
-            Log.i("TAG1", "onActivityResult: " +data);
+            Uri uri = data.getData();
+
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),uri);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             // Hiển thị ảnh đã chọn lên ImageView
             ImageView imageView = findViewById(R.id.imgacount);
-            imageView.setImageURI(selectedImage);
+            imageView.setImageURI(uri);
+
+            /////////////////
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            if(bitmap!=null){
+                bitmap.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
+                byte[] bytes = byteArrayOutputStream.toByteArray();
+                final  String base64Imgae = Base64.encodeToString(bytes , Base64.DEFAULT);
+                String url = "http://192.168.1.41/QLSV/uploadfile.php" ;
+                RequestQueue requestQueue = Volley.newRequestQueue(UserUpdate.this);
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String s) {
+                        Log.e("TAG1", "onErrorResponse: " + s.toString() );
+
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        Log.e("TAG1", "onErrorResponse: " + volleyError.toString() );
+                    }
+                }){
+                    @Nullable
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String,String> params = new HashMap<>() ;
+                        params.put("image",base64Imgae);
+                        params.put("mssv",mssv);
+                        return params;
+                    }
+                };
+                requestQueue.add(stringRequest);
+            }
+
         }
     }
 
@@ -104,12 +151,13 @@ public class UserUpdate extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 SharedPreferences sharedPref = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
-                String mssv = sharedPref.getString("key", "");
+                 mssv = sharedPref.getString("key", "");
                 txtquequan = sharedPref.getString("quequan","");
                 txtnamsinh = sharedPref.getString("ngaysinh","");
                 txtemail = sharedPref.getString("email","");
                 txtname = sharedPref.getString("hoten","");
                 txtnganhhoc = sharedPref.getString("nganhhoc","");
+                txtimg = sharedPref.getString("img","");
                 /////////////////////////////////THUC HIEN KIEM TRA TRUOC KHI TRUYEN DI DU LIEU
 
 
@@ -120,7 +168,7 @@ public class UserUpdate extends AppCompatActivity {
                 }else {
                     params.put("quequan",edtquequan.getText().toString());
                 }
-                params.put("img","null");
+                params.put("img",txtimg);
                 if(edtnamsinh.getText().toString().trim().isEmpty()){
                     params.put("ngaysinh",txtnamsinh);
                 }else {
