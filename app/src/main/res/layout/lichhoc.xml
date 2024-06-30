@@ -22,7 +22,7 @@
             <TextView
                 android:gravity="center"
                 android:layout_weight="1"
-                android:id="@+id/textView2"
+                android:id="@+id/monhoc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Mon Hoc : Phap Luat Hang Khong" />
@@ -30,7 +30,7 @@
             <TextView
                 android:gravity="center"
                 android:layout_weight="1"
-                android:id="@+id/textView3"
+                android:id="@+id/thoigian"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Thoi Gian : 7:00 -> 10:30" />
@@ -38,7 +38,7 @@
             <TextView
                 android:gravity="center"
                 android:layout_weight="1"
-                android:id="@+id/textView4"
+                android:id="@+id/giaovien"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Giao Vien : Nguyen Thi Khanh Hoa" />
@@ -46,7 +46,7 @@
             <TextView
                 android:gravity="center"
                 android:layout_weight="1"
-                android:id="@+id/textView5"
+                android:id="@+id/ngay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ngay: 25/2/2025" />
@@ -54,7 +54,7 @@
             <TextView
                 android:gravity="center"
                 android:layout_weight="1"
-                android:id="@+id/textView6"
+                android:id="@+id/phong"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Phong : G505" />

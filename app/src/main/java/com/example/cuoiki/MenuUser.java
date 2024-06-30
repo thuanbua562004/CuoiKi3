@@ -1,6 +1,8 @@
 package com.example.cuoiki;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,6 +44,16 @@ public class MenuUser extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MenuUser.this , LichHocActivity.class));
+            }
+        });
+        btnDangXuat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences sharedPref = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.clear();
+                editor.apply();
+                startActivity(new Intent(MenuUser.this , MainActivity.class));
             }
         });
     }

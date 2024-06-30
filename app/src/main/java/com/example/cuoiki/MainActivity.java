@@ -39,9 +39,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         arrayList = new ArrayList<>();
+        SharedPreferences sharedPref = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
+        String mssv = sharedPref.getString("key", "");
         setContentView(R.layout.login);
         anhxa();
         xulisk();
+        if(!mssv.isEmpty()){
+            startActivity(new Intent(MainActivity.this, HomeActivity.class));
+        }
     }
 
     private void anhxa() {

@@ -46,7 +46,4 @@ public class MonHoc {
         return tenmon;
     }
 
-    public void setTenmon(String tenmon) {
-        this.tenmon = tenmon;
-    }
 }
