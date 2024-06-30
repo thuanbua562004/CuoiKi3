@@ -7,8 +7,10 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
+
 public class NotifidetailActivity extends AppCompatActivity {
-    TextView txtTitle , txtNotiInfo ;
+    TextView txtTitle , txtNotiInfo  ;
     ImageView img ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,7 @@ public class NotifidetailActivity extends AppCompatActivity {
     private void anhxa() {
         txtTitle = findViewById(R.id.txtTitle);
         txtNotiInfo = findViewById(R.id.txtinfo);
+        img = findViewById(R.id.imgnoti);
     }
 
     private void setNotiInfo() {
@@ -31,5 +34,10 @@ public class NotifidetailActivity extends AppCompatActivity {
         Log.i("TAG1", "setNotiInfo: " + name+ notification_info+notifi_ing+date_create);
         txtTitle.setText(name.toString());
         txtNotiInfo.setText(notification_info.toString());
+        String imageUrl = notifi_ing ;
+
+        Glide.with(this)
+                .load(imageUrl)
+                .into(img);
     }
 }

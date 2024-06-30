@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -19,6 +20,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,6 +39,7 @@ public class UserActivity extends AppCompatActivity {
     String url ="http://192.168.1.41/QLSV/user.php";
     public  String mssv ;
     ImageButton news,user,home ,menu;
+    ImageView imgUser ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +61,7 @@ public class UserActivity extends AppCompatActivity {
             public void onResponse(String response) {
                 try {
                     JSONArray jsonArray = new JSONArray(response);
+                    Log.i("TAG1", "onResponse: "+ jsonArray.toString());
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject obj = jsonArray.getJSONObject(i);
                         SinhVien sv = new SinhVien(
@@ -68,7 +72,8 @@ public class UserActivity extends AppCompatActivity {
                                 obj.getString("ngaysinh"),
                                 obj.getString("nganhhoc"),
                                 obj.getString("hoten"),
-                                obj.getString("email")
+                                obj.getString("email"),
+                                obj.getString("img")
                         );
                         arrayList.add(sv);
                     }
@@ -82,6 +87,7 @@ public class UserActivity extends AppCompatActivity {
                     editor.putString("email", sv.getEmail().toString());
                     editor.putString("hoten", sv.getHoten().toString());
                     editor.putString("nganhhoc",sv.getNganhhoc().toString());
+                    editor.putString("img",sv.getImg().toString());
                     editor.apply();
                     //////////set thong tin len layout
                     setThongTin(sv);
@@ -120,6 +126,10 @@ public class UserActivity extends AppCompatActivity {
         txtQuequan.setText("Que Quan: "+sv.getQuequan());
         txtNganhhoc.setText("Nganh Hoc: "+sv.getNganhhoc());
         txtEmail.setText("Email: "+ sv.getEmail());
+        String imageUrl = "http://192.168.1.41/QLSV/" + sv.getImg().toString() ;
+        Glide.with(this)
+                .load(imageUrl)
+                .into(imgUser);
     }
     public void menubar(){
         home.setOnClickListener(new View.OnClickListener() {
@@ -155,5 +165,6 @@ public class UserActivity extends AppCompatActivity {
         txtNganhhoc = findViewById(R.id.txtnganhhoc);
         txtQuequan = findViewById(R.id.txtquequan);
         txtEmail = findViewById(R.id.txtemail);
+        imgUser = findViewById(R.id.imgacount);
     }
 }

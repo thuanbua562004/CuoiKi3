@@ -70,6 +70,7 @@ public class UserUpdate extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 updateUser(url);
+                updateImg();
             }
         });
         btnchoseImg.setOnClickListener(new View.OnClickListener() {
@@ -96,39 +97,38 @@ public class UserUpdate extends AppCompatActivity {
             // Hiển thị ảnh đã chọn lên ImageView
             ImageView imageView = findViewById(R.id.imgacount);
             imageView.setImageURI(uri);
+        }
+    }
+    public  void updateImg (){
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        if(bitmap!=null){
+            bitmap.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
+            byte[] bytes = byteArrayOutputStream.toByteArray();
+            final  String base64Imgae = Base64.encodeToString(bytes , Base64.DEFAULT);
+            String url = "http://192.168.1.41/QLSV/uploadfile.php" ;
+            RequestQueue requestQueue = Volley.newRequestQueue(UserUpdate.this);
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String s) {
+                    Log.e("TAG1", "onErrorResponse: " + s.toString() );
 
-            /////////////////
-            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            if(bitmap!=null){
-                bitmap.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
-                byte[] bytes = byteArrayOutputStream.toByteArray();
-                final  String base64Imgae = Base64.encodeToString(bytes , Base64.DEFAULT);
-                String url = "http://192.168.1.41/QLSV/uploadfile.php" ;
-                RequestQueue requestQueue = Volley.newRequestQueue(UserUpdate.this);
-                StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String s) {
-                        Log.e("TAG1", "onErrorResponse: " + s.toString() );
-
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError volleyError) {
-                        Log.e("TAG1", "onErrorResponse: " + volleyError.toString() );
-                    }
-                }){
-                    @Nullable
-                    @Override
-                    protected Map<String, String> getParams() throws AuthFailureError {
-                        Map<String,String> params = new HashMap<>() ;
-                        params.put("image",base64Imgae);
-                        params.put("mssv",mssv);
-                        return params;
-                    }
-                };
-                requestQueue.add(stringRequest);
-            }
-
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError volleyError) {
+                    Log.e("TAG1", "onErrorResponse: " + volleyError.toString() );
+                }
+            }){
+                @Nullable
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String,String> params = new HashMap<>() ;
+                    params.put("image",base64Imgae);
+                    params.put("mssv",mssv);
+                    return params;
+                }
+            };
+            requestQueue.add(stringRequest);
         }
     }
 

@@ -9,8 +9,9 @@ public class SinhVien {
     public String nganhhoc ;
     public String hoten;
     public  String email ;
+    public  String img ;
 
-    public SinhVien(String username, String password, String mssv, String quequan, String ngaysinh, String nganhhoc, String hoten, String email) {
+    public SinhVien(String username, String password, String mssv, String quequan, String ngaysinh, String nganhhoc, String hoten, String email, String img) {
         this.username = username;
         this.password = password;
         this.mssv = mssv;
@@ -19,6 +20,15 @@ public class SinhVien {
         this.nganhhoc = nganhhoc;
         this.hoten = hoten;
         this.email = email;
+        this.img = img;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public SinhVien(String mssv) {
